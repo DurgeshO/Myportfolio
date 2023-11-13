@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@700&family=Young+Serif&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f1d9d2364d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- STEP:-1 MAINE [#header] liya.. -->
+    <div id="header">
+        <!-- STtep:-2 [div.container] liya. -->
+        <div class="container">
+            <nav>
+                <img src="dm.jpg.jfif" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Junior Web Developer</p>
+                <h1>Hi, I'm <span>Durgesh Mishra,</span><br>From Mumbai.</h1>
+            </div>
+        </div>
+    </div>
+    <!-------------------About--------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="mypic.jpeg">
+                </div>
+                <div class="about-colo-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>this is my paragraph Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+                        asperiores nemo ipsa neque ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+                        atque quos nisi suscipit minus quaerat rem voluptatum? Cupiditate molestiae tempora cumque ut
+                        eius voluptatum recusandae repellendus consequuntur possimus quia. Reprehenderit commodi maiores
+                        odit sunt voluptatem repellat repudiandae, eligendi quisquam aspernatur perferendis, quasi
+                        cumque, dignissimos sit magni nihil vitae quibusdam. Similique!</p>
+
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span> Junior UI Developer</span><br>designing websites(HTML,CSS & JAVASCRIPT).</li>
+                            <!-- <p class="Para">with the help of html css javaScript i maked my portfolio</p> -->
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>ASB international pvt ltd.</span><br>As a Manufacturing Engineer.</li>
+                            <li>(21-01-2021 TO 20-07-2022)</li>
+                            <!-- <p class="Para">with the help of html css javaScript i maked my portfolio</p> -->
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Acharya Institue Of Technology.</span><br>2020-2023</li>
+                            <li><span>Shivajirao s.Jhondhle Ambernath(E).</span><br>2017-2020</li>
+                            <li><span>Yogeshwar hindi vidyalaya.</span><br>2016-2017</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------Services------------------- -->
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-brands fa-html5"></i>
+                    <h2>HTML</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quisquam error repudiandae
+                        veritatis perspiciatis ad, id ipsa dolores debitis natus dolorem officia. Laborum quae nisi
+                        minus, corrupti cupiditate dolor reiciendis.</p>
+                    <a href="#">Learn more</a>
+                </div>
+
+
+                <div>
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <h2>CSS</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quisquam error repudiandae
+                        veritatis perspiciatis ad, id ipsa dolores debitis natus dolorem officia. Laborum quae nisi
+                        minus, corrupti cupiditate dolor reiciendis.</p>
+                    <a href="#">Learn more</a>
+                </div>
+
+                <div>
+                    <i class="fa-brands fa-js"></i>
+                    <h2>javaScript</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quisquam error repudiandae
+                        veritatis perspiciatis ad, id ipsa dolores debitis natus dolorem officia. Laborum quae nisi
+                        minus, corrupti cupiditate dolor reiciendis.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- -------------------portfolio---------------------- -->
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="work-1.png">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae repudiandae magni repellat
+                            debitis voluptates est. Architecto possimus tempora rem vitae!</p>
+                        <a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="work-2.png">
+                    <div class="layer">
+                        <h3>Online Shopping App</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae repudiandae magni repellat
+                            debitis voluptates est. Architecto possimus tempora rem vitae!</p>
+                        <a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="work-5.png">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae repudiandae magni repellat
+                            debitis voluptates est. Architecto possimus tempora rem vitae!</p>
+                        <a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+
+
+    <!-- --------------------CONTACT-------------------- -->
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>durgeshmm1@gmail.com</p>
+                    <p><i class="fa-sharp fa-solid fa-square-phone"></i>9657065576</p>
+                    <div class="social-icons">
+                        <a href="https://facbook.com/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="my-cv.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form action="">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="text" name="email" placeholder="Your Email" required>
+                        <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p><i class="fa-solid fa-copyright"></i>copyright Durgesh.Made By Me</p>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-limks");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        // STEP:-2
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+
+
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <!-- --------------------Script FOR SIDEMENU[close and open tmenu]-------------------- -->
+
+    <script>
+
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right ="0";       
+         }
+
+         function closemenu(){
+            sidemenu.style.right ="-200px";       
+         }
+    </script>
+
+   
+    </script>
+</body>
+</html>

@@ -1,0 +1,532 @@
+/* "CSS reset" :- CSS me * selector ka istemal karke aap sabhi HTML elements ke default margins, paddings, font sizes aur box-sizing properties ko reset ya normalize kar sakte hain.  */
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 'poppins' sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+scroll-behavior: smooth;     /*  aisa karne se jab main 5link[home,about,contact,portfolio,services] inme se kisi pe bhi click karu to automatically uske place par leke jayega..*/
+}
+
+/* STEP:-2 maine body ko target kiya.. */
+body {
+    background: #080808;
+    color: white;
+}
+
+/* Step:-2 ab maine [#header] liya. */
+#header {
+    width: 100vh;
+    height: 40vh;
+    /* background-image: url(mypic.jpeg); */
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Step:-3 [.container] ko edit kiya */
+.container {
+    padding: 10px 10%;
+}
+
+/* Step:-4 [.nav] liya */
+nav {
+    display: flex;
+    /* Flex container ke andar ke elements ko horizontally (row-wise) ya vertically (column-wise) layout karne me madad karti hai.*/
+    align-items: center;
+    justify-content: space-between;
+    /* pehla element container ke start par hoga, aakhri element container ke end par hoga, aur baki ke elements equal spacing ke saath distribute honge.*/
+    flex-wrap: wrap;
+    /*   new rows ya columns me wrap karne ka permission deta hai,   */
+}
+
+/* STEP:-5 jo mera logo hai maine usko size diya */
+.logo {
+    width: 100px;
+
+}
+
+/* Step:-6 ab maine [nav ke under ke ul] ko target kiya. */
+nav ul {
+    list-style: none;
+    /* bullet point ko hatane ke liye use karte hain */
+    padding: 17px;
+    position: fixed;
+    top: 10px;
+    right: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    /*element apni natural position par hi rahega, OR [ye parent element hain. */
+
+}
+
+nav ul li a::after {
+    content: '';
+    /* content ak pseudo element hai iske 2 types hai  ek pseudo-element ::before ya ::after ke saath istemal hota hai]*/
+    width: 0%;
+    height: 3px;
+    background-color: #ff004f;
+    position: absolute;
+    /* ye relative position ke anusaar behave karega this is a child element  */
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+nav ul li a::after {
+    content: '';
+    /* content ak pseudo element hai iske 2 types hai  ek pseudo-element ::before ya ::after ke saath istemal hota hai]*/
+    width: 0%;
+    height: 3px;
+    background-color: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.header-text {
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+
+.header-text h1 {
+    font-size: 40px;
+    margin-top: 5px;
+
+}
+
+.header-text h1 span {
+    color: red;
+}
+
+/* -----------------About Me------------- */
+
+
+#about {
+    padding: 75px 0;
+    color: white;
+}
+
+.row {
+    display: flex;
+    flex-direction: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+
+.about-col-1 {
+    flex-basis: 35%;
+    /*   flex-basis property ka istemal kisi flex item ki initial size ko set karne ke liye hota hai */
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+
+}
+
+.about-col-2 {
+    flex-basis: 50%;
+    /*   flex-basis property ka istemal kisi flex item ki initial size ko set karne ke liye hota hai */
+}
+
+.sub-title {
+    font-size: 40px;
+    font-weight: 400;
+    color: yellow;
+    margin: 5px;
+    /* ye humne [about me] ko styling me karne ke liye kiya. */
+}
+
+
+.tab-titles {
+    display: flex;
+    margin: 10px 0 40px;
+}
+
+.tab-links {
+    margin-right: 40px;
+    /*per words ke beech kitna chahhiye horizontal me vo set kiya hain.. */
+    font-weight: 300;
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.3s;
+
+}
+
+.tab-links.active-link::after {
+    width: 90%;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 4px 0;
+}
+
+.tab-contents ul li span {
+    color: grey;
+    font-size: 22px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+
+/* ---------------------------services------------------------ */
+
+#services {
+    padding: 30px 0;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 10px;
+}
+
+.services-list div {
+    background: #262626;
+    padding: 40px;
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 8px;
+    transition: background 0.5s, transform 0.5s;
+    /* piche ke background color ko smooth banane ke liye hota hai animated banane ke liye hota hai. means jab aap uspe click karoge to uper-neeche reflect hoga   */
+}
+
+
+.services-list div i {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.services-list div h2 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.services-list div a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.services-list div:hover {
+    background: #d20a46;
+    transform: translateY(-10px);
+    /* agar mai [html,css,javascript] me se kisi pe bhi apna cursor leke jau to transform hoga means uper neeche hoga  */
+
+}
+
+
+
+
+/* ----------------------portfolio------------------ */
+
+
+#portfolio {
+    padding: 50px 0;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform(0.5s);
+}
+
+.layer {
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+    /* apne layer per shadow feel jaisa color dene ke liye karenge */
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    /* likha hua sab ak side me chale jayega jaise ki left me*/
+    align-items: center;
+    /*  upper bich me center me aa jayega */
+    justify-content: center;
+    /*middle center me aa jayega */
+    flex-direction: column;
+    /*likha hua sab coloumn or center me achhe se aa jayega */
+    padding: 0 40px;
+    /*  lorem ko fix karne ke liye size dete hai.. */
+    text-align: center;
+    font-size: 17px;
+    transition: height 0.5s;
+    /*ye aisa rakhne per jo text ke uper layer hai vo neeche se aayega focus hoga*/
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: red;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /*arrow ke piche ka circle banane ke liye */
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: white;
+}
+
+
+/* apne image ke uper jab cursor leke jayenge tab picture zoom hoga  */
+.work:hover img {
+    transform: scale(1.1);
+    /* zoom hoga ye  transform: scale(1.1); ye position rakhne par  */
+
+}
+
+.work:hover .layer {
+    height: 100%;
+    /*  uper [.layer] ka height [zero 0] rakhne par jitna bhi hum likhenge sab gayab ho jayega our jab bhi hum [.work:hover .layer] ke under [height: 100%;] set karoge to jitna bhi text gayab hua tha vapas aa jayega */
+}
+
+.btn {
+    display: block;
+    margin: 50px auto;
+    /* 50px from top and bottom AND auto from left & right.. */
+    width: fit-content;
+    /* fit content karne se [see more] option hai beech me aa jayega */
+    border: 1px solid red;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.5s;
+    /*   background me [0.5s] ke liye effect create hota hai  */
+}
+
+.btn:hover {
+    background: green;
+}
+
+
+/* ------------contact-------------- */
+/* jo contact me likha hai uska size ko bada diya humne... */
+.sub-title {
+    font-size: 60px;
+}
+
+
+.contact-left {
+    flex-basis: 35%;
+}
+
+.contact-right {
+    flex-basis: 60%;
+    /*  flex-basis width height ko set karne ke liye use hota hai.. */
+}
+
+/* --------------------THIS IS FOR CONTACT LEFT-------------------- */
+.contact-left p {
+    margin-top: 30px;
+}
+
+.contact-left p i {
+    margin-left: 15px;
+    font-size: 25px;
+}
+
+.social-icons {
+    margin-top: 30px;
+    font-size: 25px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    margin-left: 15px;
+    color: white;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: lightblue;
+    transform: translateY(-5px);
+    /* jab bhi hum uspe apna cursor leke jayenge tab vo uth ke dikhega uske liye ye property ka use karte hain .*/
+    /* transform: scale(1.1);  agar ye property ka use hum karte hai to jab cursor uspe leke jayenge to halka sa zoom hoga  */
+}
+
+.btn.btn2 {
+    display: inline-block;
+    background: red;
+}
+
+/* --------------------THIS IS FOR CONTACT RIGHT-------------------- */
+
+.contact-right form {
+    width: 100%;
+}
+
+/* mai 2 ko ak saath edit kar raha hu 1st:-input ko 2nd:-textarea */
+form input,
+form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    /*outline ko none karne se name, email, message ke beech jo outline hai vo hat jayega */
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: white;
+    font-size: 20px;
+    border-radius: 6px;
+}
+
+form .btn2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* --------------FOR COPYRIGHT------------------- */
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+/* ----------------FOR CLOSING AND OPEN BAR------------------- */
+
+nav .fas {
+    display: none;
+}
+
+
+
+
+
+
+/* -----------css for small screen---------------- */
+
+@media only screen and (max-width:600px) {
+    nav .fas {
+        display: block;
+        font-size: 25px;
+    }
+
+    nav ul{
+        background: red;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;   /*web elements ki vertical stacking order ko control karne ke liye kiya jata hai jab wo overlap karte hain. */
+        transition: right 0.5s;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    .sub-title{
+        font-size: 10px;
+    }
+
+
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+
+    .about-col-2{
+        font-size: 14px;
+    }
+
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+}
+
+#msg{
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
+}
+
